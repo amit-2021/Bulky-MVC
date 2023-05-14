@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulkyWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230514111154_SeedCategoryTB")]
-    partial class SeedCategoryTB
+    [Migration("20230514115015_SeedTableToDB")]
+    partial class SeedTableToDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,7 +60,7 @@ namespace BulkyWeb.Migrations
                         {
                             Id = 3,
                             DisplayOrder = 3,
-                            Name = "Action"
+                            Name = "History"
                         });
                 });
 #pragma warning restore 612, 618
