@@ -17,9 +17,23 @@ namespace BulkyWeb.Controllers
             List<Category> objCategoryList = _db.Categorys.ToList();
             return View(objCategoryList);
         }
-
         public IActionResult Create ()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create (Category obj)
+        {
+            //if (obj.Name == obj.DisplayOrder.ToString())
+            //{
+            //    ModelState.AddModelError("Name", "The Display cannot exactly match the Name");
+            //}
+            if (ModelState.IsValid)
+            {
+                _db.Categorys.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }
